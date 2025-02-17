@@ -1,17 +1,26 @@
 import './App.css';
 
-import { Header } from './modules';
-import { Layout } from './modules/layout/layout';
+import { BrowserRouter, Outlet, Route, Routes } from 'react-router';
+
+import { Header, Layout } from './modules';
 import { AppView } from './view';
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <Header />
-      <Layout>
-        <AppView />
-      </Layout>
-    </>
+      <Routes>
+        <Route
+          element={
+            <Layout>
+              <Outlet />
+            </Layout>
+          }
+        >
+          <Route index element={<AppView />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

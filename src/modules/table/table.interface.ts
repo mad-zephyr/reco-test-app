@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 export type TColumn = { title: string };
 
 type TApp = {
@@ -29,6 +31,5 @@ export type TTable = {
     head: TColumn[];
     rows: CellData[];
   };
-
-  onSetDetails?: (data: CellData) => void;
+  body: ReactNode;
 };

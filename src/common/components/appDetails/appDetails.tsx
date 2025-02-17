@@ -1,6 +1,7 @@
+import { TableCell, TableRow } from '@mui/material';
 import { FC } from 'react';
 
-import { Table } from '../../../modules';
+import { TableView } from '../../../modules';
 import { CellData } from '../../../modules/table/table.interface';
 import styles from './styles.module.sass';
 
@@ -10,7 +11,7 @@ export const AppDetails: FC<TAppDetails> = ({ data }) => {
   const { app, users, connector } = data;
 
   return (
-    <div>
+    <div className={styles.main}>
       <div>
         <img src={app.avatar} alt={app.name} />
         <span>{app.name}</span>
@@ -38,9 +39,23 @@ export const AppDetails: FC<TAppDetails> = ({ data }) => {
         </div>
       </div>
 
-      <div>
-        <Table data={{ head: [{ title: 'username' }], rows: [] }} />
-      </div>
+      <TableView
+        data={{ head: [{ title: 'username' }], rows: [] }}
+        body={
+          <>
+            {users.map((item, i) => (
+              <TableRow
+                key={i}
+                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+              >
+                <TableCell component="th" scope="row">
+                  {item.email}
+                </TableCell>
+              </TableRow>
+            ))}
+          </>
+        }
+      />
     </div>
   );
 };

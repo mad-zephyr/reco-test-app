@@ -1,3 +1,4 @@
 export { Header } from './header/header';
+export { Layout } from './layout/layout';
 export { Sidebar } from './sidebar/sidebar';
-export { Table } from './table/table';
+export { TableView } from './table/table';
