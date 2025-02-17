@@ -4,7 +4,7 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: var(--color-font);
   background-color: #242424;
 
   font-synthesis: none;
@@ -12,7 +12,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --color-grey: #27292b;
+  --color-accent: #205ced;
+  --color-border: #e8e9ff;
+  --color-font: #4c4c4c;
+  --color-background: #f9fafc;
+  --color-foreground: #ffffff;
 }
 
 * {
